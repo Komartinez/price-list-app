@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
-import { Button, Modal } from 'semantic-ui-react';
+import { Modal } from 'semantic-ui-react';
 
 import FormUser from '../FormUser/FormUser';
 
 class ModalUser extends Component {
 
   render() {
+    console.log(this.props.handleModal)
     return (
-      <Modal
-        trigger={<Button color={this.props.buttonColor}>{this.props.buttonTriggerTitle}</Button>}
-        dimmer='inverted'
-        size='tiny'
-        closeIcon='close'
-      >
-        <Modal.Header>{this.props.headerTitle}</Modal.Header>
-        <Modal.Content>
-          <FormUser
-            buttonSubmitTitle={this.props.buttonSubmitTitle}
-            buttonColor={this.props.buttonColor}
-            userID={this.props.userID}
-            onUserAdded={this.props.onUserAdded}
-            onUserUpdated={this.props.onUserUpdated}
-            server={this.props.server}
-            socket={this.props.socket}
-          />
-        </Modal.Content>
-      </Modal>
+        <Modal
+          open={this.props.open}
+          dimmer='inverted'
+          size='mini'
+          closeIcon='close'
+        >
+          <Modal.Header>{this.props.headerTitle}</Modal.Header>
+          <Modal.Content>
+            <FormUser
+              buttonSubmitTitle={this.props.buttonSubmitTitle}
+              buttonColor={this.props.buttonColor}
+              userID={this.props.userID}
+              onUserAdded={this.props.onUserAdded}
+              onUserUpdated={this.props.onUserUpdated}
+              server={this.props.server}
+              open={this.props.open}
+            />
+          </Modal.Content>
+        </Modal>
     );
   }
 }

@@ -95,6 +95,8 @@ class FormUser extends Component {
         formSuccessMessage: response.data.msg
       });
 
+      this.setState({ open: !this.props.open });
+
       if (!this.props.userID) {
         this.setState({
           name: '',
@@ -103,11 +105,9 @@ class FormUser extends Component {
           gender: ''
         });
         this.props.onUserAdded(response.data.result);
-        this.props.socket.emit('add', response.data.result);
       }
       else {
         this.props.onUserUpdated(response.data.result);
-        this.props.socket.emit('update', response.data.result);
       }
       
     })
@@ -190,7 +190,7 @@ class FormUser extends Component {
           content={formErrorMessage}
         />
         <Button color={this.props.buttonColor} floated='right'>{this.props.buttonSubmitTitle}</Button>
-        <br /><br /> {/* Yikes! Deal with Semantic UI React! */}
+        <br /><br />
       </Form>
     );
   }

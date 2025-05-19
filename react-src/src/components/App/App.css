@@ -2,45 +2,26 @@
   background-color: #222;
   color: #ccc;
   margin-bottom: 25px;
-  padding: 20px 20px 15px;
+  padding: 20px 30px;
   text-align: center;
 }
 
-.App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
-  height: 85px;
+	.App-header p {
+		text-align: left;	
+	}
+
+#App-intro {
+  text-align: left;
 }
 
-.App-intro {
-  margin-top: 15px;
+.App-Body {
+	padding: 30px;
 }
 
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 } */
-
-#online {
-  margin-left: 10px;
-}
-
-.shirts {
-  opacity: 1;
-}
-
-.shirts:hover {
-  opacity: .75;
-}
-
-a.shirts {
-  color: #ccc;
-  font-size: 13px;
-}
-
-.shirts img {
-  height: 40px;
-  animation: pulse 1s infinite;
-}
 
 @keyframes pulse {
 	0% {
